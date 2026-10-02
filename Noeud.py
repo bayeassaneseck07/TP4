@@ -2,14 +2,23 @@ import math
 
 
 class Noeud:
+    """
+    Classe permettant de représenter un noeud dans un arbre d'expression mathématique.
+    """
     def __init__(self, val, liste=None):
         self.val = val
         self.liste = liste if liste is not None else []
 
     def ajouter_noeud(self, noeud):
+        """
+        Ajoute un noeud enfant à la liste des enfants du noeud actuel.
+        """
         self.liste.append(noeud)
 
     def affichage_polonais(self):
+        """
+        Affiche l'expression mathématique du noeud et de ses enfants en notation polonaise.
+        """
         a_explorer = [self]
         deja_visites = []
 
